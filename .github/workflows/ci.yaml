@@ -19,15 +19,15 @@ jobs:
 
       - name: Build and run gates tests
         run: |
-          g++ -std=c++17 -o test_gates tests/test_gates.cpp datapath/gates.cpp
+          g++ -std=c++17 -o test_gates tests/test_gates.cpp gates/gates.cpp
           ./test_gates
 
       - name: Build and run adders tests
         run: |
-          g++ -std=c++17 -o test_adders tests/alu/test_adders.cpp datapath/adders.cpp utils/utils.cpp
+          g++ -std=c++17 -o test_adders tests/alu/test_adders.cpp gates/gates.cpp datapath/adders.cpp utils/utils.cpp
           ./test_adders
 
       - name: Build and run bitwise tests
         run: |
-          g++ -std=c++17 -o test_bitwise tests/alu/test_bitwise.cpp datapath/bitwise.cpp utils/utils.cpp
+          g++ -std=c++17 -o test_bitwise tests/alu/test_bitwise.cpp gates/gates.cpp datapath/bitwise.cpp utils/utils.cpp
           ./test_bitwise
