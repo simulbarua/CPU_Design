@@ -1,0 +1,22 @@
+name: CPU Design Tests
+
+on:
+  pull_request:
+  push:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Install compiler
+        run: sudo apt-get update && sudo apt-get install -y g++
+
+      - name: Build tests
+        run: g++ -std=c++17 tests/test_gates.cpp gates/gates.cpp -o test_runner
+
+      - name: Run tests
+        run: ./test_runner
