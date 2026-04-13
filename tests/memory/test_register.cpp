@@ -9,24 +9,24 @@
 void testInitialState() {
 	Register reg;
 	std::vector<bool> expected(16, 0);
-	assert(reg.getData() == expected);
+	assert(reg.read() == expected);
 }
 
 // Store a value and read it back
 void testStoreAndLoad() {
 	Register reg;
 	std::vector<bool> val = num2unsignedBinary(42, 16);
-	reg.setData(val);
-	assert(reg.getData() == val);
+	reg.write(val);
+	assert(reg.read() == val);
 }
 
 // Overwrite with a new value
 void testOverwrite() {
 	Register reg;
-	reg.setData(num2unsignedBinary(100, 16));
+	reg.write(num2unsignedBinary(100, 16));
 	std::vector<bool> val2 = num2unsignedBinary(200, 16);
-	reg.setData(val2);
-	assert(reg.getData() == val2);
+	reg.write(val2);
+	assert(reg.read() == val2);
 }
 
 // Store all 1s and all 0s
@@ -34,12 +34,12 @@ void testAllOnesAndZeros() {
 	Register reg;
 
 	std::vector<bool> allOnes(16, 1);
-	reg.setData(allOnes);
-	assert(reg.getData() == allOnes);
+	reg.write(allOnes);
+	assert(reg.read() == allOnes);
 	
 	std::vector<bool> allZeros(16, 0);
-	reg.setData(allZeros);
-	assert(reg.getData() == allZeros);
+	reg.write(allZeros);
+	assert(reg.read() == allZeros);
 }
 
 int main() {

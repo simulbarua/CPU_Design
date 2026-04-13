@@ -24,8 +24,9 @@ CPU_Design/
 
 ## Design Assumptions
 
-- All binary vectors use `std::vector<bool>` with **index 0 as MSB** (most significant bit)
-- All components are **16-bit**
+- All components assume **16-bit** unless configured otherwise
+- All 16-bit binary values are represented by `std::vector<bool>` with **index 0 as MSB** (most significant bit)
+
 
 ## Build & Run Tests
 
@@ -52,6 +53,9 @@ g++ -std=c++17 -o test_flipflop tests/memory/test_flipflop.cpp memory/flipflop.c
 
 # Register
 g++ -std=c++17 -o test_register tests/memory/test_register.cpp memory/register.cpp memory/flipflop.cpp gates/gates.cpp utils/utils.cpp && ./test_register
+
+# Memory
+g++ -std=c++17 -o test_memory tests/memory/test_memory.cpp memory/memory.cpp memory/register.cpp memory/flipflop.cpp gates/gates.cpp utils/utils.cpp && ./test_memory
 ```
 
 ## Team Members

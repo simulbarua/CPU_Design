@@ -46,3 +46,8 @@ jobs:
         run: |
           g++ -std=c++17 -o test_register tests/memory/test_register.cpp memory/register.cpp memory/flipflop.cpp gates/gates.cpp utils/utils.cpp
           ./test_register
+
+      - name: Build and run memory tests
+        run: |
+          g++ -std=c++17 -o test_memory tests/memory/test_memory.cpp memory/memory.cpp memory/register.cpp memory/flipflop.cpp gates/gates.cpp utils/utils.cpp
+          ./test_memory
