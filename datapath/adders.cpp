@@ -4,8 +4,8 @@
 // HalfAdder
 HalfAdder::HalfAdder(bool inputA, bool inputB)
 	: A(inputA), B(inputB) {
-	sum = XOR(A, B).eval();
-	carryOut = AND(A, B).eval();
+	sum = XOR(A, B);
+	carryOut = AND(A, B);
 }
 
 bool HalfAdder::getSum() {
@@ -22,7 +22,7 @@ FullAdder::FullAdder(bool inputA, bool inputB, bool carryIn)
 	HalfAdder halfAdder = HalfAdder(A, B);
 	HalfAdder halfAdder2 = HalfAdder(halfAdder.getSum(), carryIn);
 	sum = halfAdder2.getSum();
-	carryOut = OR(halfAdder.getCarryOut(), halfAdder2.getCarryOut()).eval();
+	carryOut = OR(halfAdder.getCarryOut(), halfAdder2.getCarryOut());
 }	
 
 bool FullAdder::getSum() {

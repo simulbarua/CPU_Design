@@ -6,32 +6,40 @@
 // Test AND gate
 
 void testAndGate() {
-	assert(AND(0, 0).eval() == false);
-	assert(AND(0, 1).eval() == false);
-	assert(AND(1, 0).eval() == false);
-	assert(AND(1, 1).eval() == true);
+	assert(AND(0, 0) == false);
+	assert(AND(0, 1) == false);
+	assert(AND(1, 0) == false);
+	assert(AND(1, 1) == true);
 }
 
 // Test OR gate
 void testOrGate() {
-	assert(OR(0, 0).eval() == 0);
-	assert(OR(0, 1).eval() == 1);
-	assert(OR(1, 0).eval() == 1);
-	assert(OR(1, 1).eval() == 1);
+	assert(OR(0, 0) == 0);
+	assert(OR(0, 1) == 1);
+	assert(OR(1, 0) == 1);
+	assert(OR(1, 1) == 1);
 }
 
 // Test XOR gate
 void testXorGate() {
-	assert(XOR(0, 0).eval() == 0);
-	assert(XOR(0, 1).eval() == 1);
-	assert(XOR(1, 0).eval() == 1);
-	assert(XOR(1, 1).eval() == 0);
+	assert(XOR(0, 0) == 0);
+	assert(XOR(0, 1) == 1);
+	assert(XOR(1, 0) == 1);
+	assert(XOR(1, 1) == 0);
 }
 
 // Test NOT gate
 void testNotGate() {
-	assert(NOT(0).eval() == 1);
-	assert(NOT(1).eval() == 0);
+	assert(NOT(0) == 1);
+	assert(NOT(1) == 0);
+}
+
+// Test NAND gate
+void testNandGate() {
+	assert(NAND(0, 0) == 1);
+	assert(NAND(0, 1) == 1);
+	assert(NAND(1, 0) == 1);
+	assert(NAND(1, 1) == 0);
 }
 
 int main() {
@@ -44,6 +52,9 @@ int main() {
 	testXorGate();
 	std::cout << "(4/4) Testing NOT gate\n";
 	testNotGate();
+	std::cout << "All gate tests passed!\n\n";
+	std::cout << "(5/5) Testing NAND gate\n";
+	testNandGate();
 	std::cout << "All gate tests passed!\n\n";
 	return 0;
 }
