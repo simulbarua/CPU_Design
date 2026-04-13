@@ -3,53 +3,14 @@
 
 #include <vector>
 
-class OR {
-	public:
-		OR(bool inputA, bool inputB);
-		bool eval();
-	private:
-		bool A;
-		bool B;
-		bool result;
-};
+bool OR(bool inputA, bool inputB);
 
-class AND {
-	public:
-		AND(bool inputA, bool inputB);
-		bool eval();
-	private:
-		bool A;
-		bool B;
-		bool result;
-};
+bool AND(bool inputA, bool inputB);
 
-class NOT {
-	public:
-		NOT(bool input);
-		bool eval();
-	private:
-		bool A;
-		bool result;
-};
+bool NOT(bool input);
 
-class XOR {
-	public:
-		XOR(bool inputA, bool inputB);
-		bool eval();
-	private:
-		bool A;
-		bool B;
-		bool result;
-};
+bool XOR(bool inputA, bool inputB);
 
-class NAND {
-	public:
-		NAND(bool inputA, bool inputB);
-		bool eval();
-	private:
-		bool A;
-		bool B;
-		bool result;
-};
+bool NAND(bool inputA, bool inputB);
 
 #endif // GATES_H

@@ -6,7 +6,7 @@ bitwiseOR::bitwiseOR(std::vector<bool> inputA, std::vector<bool> inputB)
 	: A(inputA), B(inputB) {
 	result.resize(A.size());
 	for (int i = A.size() - 1; i >= 0; i--) {
-		result[i] = OR(A[i], B[i]).eval();
+		result[i] = OR(A[i], B[i]);
 	}
 }
 
@@ -19,7 +19,7 @@ bitwiseAND::bitwiseAND(std::vector<bool> inputA, std::vector<bool> inputB)
 	: A(inputA), B(inputB) {
 	result.resize(A.size());
 	for (int i = A.size() - 1; i >= 0; i--) {
-		result[i] = AND(A[i], B[i]).eval();
+		result[i] = AND(A[i], B[i]);
 	}
 }
 
@@ -32,7 +32,7 @@ bitwiseNOT::bitwiseNOT(std::vector<bool> input)
 	: A(input) {
 	result.resize(A.size());
 	for (int i = A.size() - 1; i >= 0; i--) {
-		result[i] = NOT(A[i]).eval();
+		result[i] = NOT(A[i]);
 	}
 }
 
@@ -45,7 +45,7 @@ bitwiseXOR::bitwiseXOR(std::vector<bool> inputA, std::vector<bool> inputB)
 	: A(inputA), B(inputB) {
 	result.resize(A.size());
 	for (int i = A.size() - 1; i >= 0; i--) {
-		result[i] = XOR(A[i], B[i]).eval();
+		result[i] = XOR(A[i], B[i]);
 	}
 }
 
